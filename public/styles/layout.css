@@ -19,7 +19,7 @@ body {
   color: #244751;
   font-family: "Roboto Condensed", sans-serif;
   height: 100%;
-  margin: 0;
+  margin: 0px;
 }
 
 /*
@@ -27,8 +27,8 @@ body {
  */
  .container {
   background: white;
-  height: 1000px;
-  margin: 0 auto;
+  height: 100%;
+  margin: 0px auto;
   padding: 2em;
   text-align: center;
   width: 450px;
