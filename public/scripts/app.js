@@ -12,8 +12,11 @@ $(document).ready(function() {
 
   function getDate(timeStamp) {
     let date = new Date(timeStamp);
-    let
-    return `${date.getFullYear()} ${date.getMonth() + 1}/${date.getDate()}  ${date.getHours()}:${date.getMinutes()}`;
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    return `${date.getFullYear()} ${date.getMonth() + 1}/${date.getDate()}  ${date.getHours()}:${minutes}`;
   }
 
   function createTweetElement(tweet) {
@@ -104,9 +107,10 @@ $(document).ready(function() {
   });
 
   $('.compose').on('click', function () {
-    $('.new-tweet').slideToggle('slow');
+    $('.new-tweet').slideToggle(200);
     $('.new-tweet textarea').focus();
   })
+
 
 
 
