@@ -33,3 +33,7 @@ body {
   text-align: center;
   width: 450px;
  }
+
+ #posted-tweet-container {
+  background-color: white;
+ }

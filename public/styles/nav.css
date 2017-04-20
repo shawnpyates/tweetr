@@ -6,7 +6,9 @@
   background-color: #00a087;
   color: #e8fdff;
   width: 100%;
+  overflow: auto;
   padding: 0 2em 0;
+  white-space: nowrap;
   z-index: 10;
 }
 
@@ -22,4 +24,21 @@
   font-size: 2em;
   margin-left: 10px;
   line-height: 80px;
+}
+
+.compose {
+  background-color: lightcyan;
+  border: 1px solid black;
+  color: #00a087;
+  display: inline;
+  float: right;
+  height: 60px;
+  border-radius: 10px;
+  margin-right: 80px;
+  margin-top: 10px;
+  width: 120px;
+}
+
+.compose i {
+  margin-right: 5px;
 }
