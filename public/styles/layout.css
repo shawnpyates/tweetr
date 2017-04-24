@@ -18,22 +18,16 @@ body {
   background-color: #eee;
   color: #244751;
   font-family: "Roboto Condensed", sans-serif;
-  height: 100%;
-  margin: 0px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- .container {
+.container {
   background: white;
   height: 100%;
   margin: 0px auto;
   padding: 2em;
   text-align: center;
   width: 450px;
- }
-
- #posted-tweet-container {
-  background-color: white;
- }
+}

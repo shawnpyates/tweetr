@@ -1,15 +1,6 @@
-.counter {
-  font-size: 0.8em;
-  font-style: italic;
-  float: right;
-  margin-right: 20px;
-  margin-top: 2px
-}
-
 .new-tweet {
   background-color: darkgrey;
   border-radius: 5px;
-  margin-bottom: 20px;
   margin-top: 100px;
   padding-bottom: 35px;
 }
@@ -38,8 +29,17 @@ textarea {
   padding-left: 3px;
 }
 
+.counter {
+  font-size: 0.8em;
+  font-style: italic;
+  float: right;
+  margin-right: 20px;
+  margin-top: 2px
+}
+
+
 #invalid {
-  margin: 0 auto;
+  margin: 5px auto;
   color: red;
   visibility: hidden;
 }

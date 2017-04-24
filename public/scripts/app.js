@@ -7,9 +7,10 @@
 
 $(document).ready(function() {
 
+  // hide "compose tweet" box upon page load
   $('.new-tweet').slideUp('fast');
 
-
+  // get date for tweet's time stamp
   function getDate(timeStamp) {
     let date = new Date(timeStamp);
     let minutes = date.getMinutes();
@@ -19,6 +20,7 @@ $(document).ready(function() {
     return `${date.getFullYear()} ${date.getMonth() + 1}/${date.getDate()}  ${date.getHours()}:${minutes}`;
   }
 
+  //generate DOM for posted tweets and new tweets upon post
   function createTweetElement(tweet) {
     let $avatar = $('<img/>', { src: tweet.user.avatars.regular }).addClass("avatar");
     let $name = $('<h4></h4>', { text: tweet.user.name }).addClass("name");
@@ -39,6 +41,7 @@ $(document).ready(function() {
     return $tweet;
   }
 
+  //render tweets into "posted tweets" container
   function renderTweets(tweets) {
     $("#posted-tweet-container").empty();
     for (let i = 0; i < tweets.length; i++) {
@@ -46,7 +49,6 @@ $(document).ready(function() {
       $("#posted-tweet-container").prepend(tweetElement);
     }
   }
-
 
 
   //load tweets from the DB
@@ -59,23 +61,16 @@ $(document).ready(function() {
     });
   }
 
-  function errorTrueOrFalse(boolean) {
-    if (boolean === true) {
-      $('#invalid').css('visibility', 'visible');
-    } else {
-      $('#invalid').css('visibility', 'hidden');
-    }
-  }
-
   //create new tweets upon submission
   $('.new-tweet form').on('submit', function(e) {
     e.preventDefault();
     const $textLength = $(this).find('textarea').val().length;
     console.log($textLength);
+    // validate tweets for correct length
     if ($textLength < 1 || $textLength > 140) {
-      errorTrueOrFalse(true);
+      $('#invalid').css('visibility', 'visible');
     } else {
-      errorTrueOrFalse(false);
+      $('#invalid').css('visibility', 'hidden');
       $.ajax({
         url: '/tweets',
         method: 'POST',
@@ -88,16 +83,17 @@ $(document).ready(function() {
     }
   });
 
-
-
   loadTweets();
 
+  // increase opacity tweet box icons upon hover
   $('#posted-tweet-container').hover(function() {
     $(this).find('footer i').css('opacity', '1');
   }, function () {
     $(this).find('footer i').css('opacity', '0.6');
   });
 
+
+  // change color of "compose" button upon hover
   $('.compose').hover(function() {
     $(this).css('background-color', 'white');
     $(this).css('color', 'black');
@@ -106,13 +102,11 @@ $(document).ready(function() {
     $(this).css('color', '#00a087');
   });
 
+  // slide "new tweet" box down when "compose" button is clicked
   $('.compose').on('click', function () {
     $('.new-tweet').slideToggle(200);
     $('.new-tweet textarea').focus();
-  })
-
-
-
+  });
 
 });
 

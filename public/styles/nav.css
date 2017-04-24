@@ -1,26 +1,21 @@
 #nav-bar {
   position: fixed;
-  top: 0;
-  left: 0;
   height: 80px;
   background-color: #00a087;
   color: #e8fdff;
   width: 100%;
   overflow: auto;
-  padding: 0 2em 0;
+  padding: 0px 2em 0px;
   white-space: nowrap;
-  z-index: 10;
+  z-index: 3;
 }
 
 #nav-bar .logo {
   float: left;
-  height: 80px;
   width: 80px;
 }
 
 #nav-bar .header {
-
-  float: left;
   font-size: 2em;
   margin-left: 10px;
   line-height: 80px;
@@ -30,7 +25,6 @@
   background-color: lightcyan;
   border: 1px solid black;
   color: #00a087;
-  display: inline;
   float: right;
   height: 60px;
   border-radius: 10px;
